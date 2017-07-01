@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Module_Trust.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,8 +22,10 @@ namespace Module_Trust.Views
     public partial class ViewA : UserControl
     {
         public ViewA()
-        {
+        { 
             InitializeComponent();
+            ViewAViewModel  vm=new ViewAViewModel ();
+            GridView.ItemsSource = vm.SetDataSource();
         }
     }
 }

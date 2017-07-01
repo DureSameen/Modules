@@ -6,8 +6,24 @@
              xmlns:local="clr-namespace:Module_Organization.Views"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" xmlns:prism="http://prismlibrary.com/"  
-             prism:ViewModelLocator.AutoWireViewModel="True">
+             prism:ViewModelLocator.AutoWireViewModel="True" xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation">
     <Grid>
-        <TextBlock Text="View B" FontSize="38" />
+        <telerik:RadGridView   x:Name="GridView"    
+								 AutoGenerateColumns="False" ShowGroupPanel="False"  
+								RowIndicatorVisibility="Collapsed"  
+								 BorderThickness="1" GridLinesVisibility="Horizontal" CanUserFreezeColumns="False"
+								 HorizontalGridLinesBrush="Black"  >
+
+            <telerik:RadGridView.Columns>
+                <telerik:GridViewDataColumn Header="Name" DataMemberBinding="{Binding  Name}" Width="*"  />
+                <telerik:GridViewDataColumn Header="City" DataMemberBinding="{Binding City}" Width="*"/>
+                <telerik:GridViewDataColumn Header="State" DataMemberBinding="{Binding State}" Width="*"/>
+
+                <telerik:GridViewDataColumn Header="Contact Person" DataMemberBinding="{Binding  CPerson}" Width="*"  />
+                <telerik:GridViewDataColumn Header="Title" DataMemberBinding="{Binding CTitle}" Width="*"/>
+                <telerik:GridViewDataColumn Header="Email" DataMemberBinding="{Binding CEmail}" Width="*"/>
+
+            </telerik:RadGridView.Columns>
+        </telerik:RadGridView>
     </Grid>
 </UserControl>

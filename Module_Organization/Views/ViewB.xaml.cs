@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Module_Organization.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,8 @@ namespace Module_Organization.Views
         public ViewB()
         {
             InitializeComponent();
+            ViewBViewModel vm = new ViewBViewModel();
+            GridView.ItemsSource = vm.SetDataSource();
         }
     }
 }
