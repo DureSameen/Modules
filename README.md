@@ -3,7 +3,7 @@ This is small project based on Prism and Unity. It download all the required mod
 
 # Module_Trust and Module_Ogranization
 
- Independent modules that connect to on premises client web api for all data related operations.
+ Independent modules that connect to on premises client web api for all data related operations. They contains telerik grid control for example.
  
  # Setup Project
  This is the installer that take and save Customer secret key.
