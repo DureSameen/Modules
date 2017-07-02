@@ -20,7 +20,10 @@ namespace SSClientApp
 
         protected override IModuleCatalog CreateModuleCatalog()
         {
-            var catalog= new DirectoryModuleCatalog() { ModulePath = @".\Modules"  };
+            string modules_dir = @".\Modules";
+            if (!System.IO.Directory.Exists(modules_dir ))
+                          ApplicationModules.Install();
+            var catalog = new DirectoryModuleCatalog() { ModulePath = modules_dir };
             
             return catalog;
         }
@@ -29,7 +32,7 @@ namespace SSClientApp
         {
           
             var catalog = (ModuleCatalog)ModuleCatalog;
-            catalog.Initialize();
+            //catalog.Initialize();
         foreach(var module in catalog.Modules)
         {
            
