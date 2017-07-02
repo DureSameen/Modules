@@ -4,6 +4,7 @@ using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Configuration;
 using System.Data.Services.Client;
 using Telerik.Windows.Data;
  
@@ -33,7 +34,7 @@ namespace Module_Trust.ViewModels
             {
                 if (this.context == null)
                 {
-                    this.context = new Container(new Uri("http://localhost/SCClientApi/odata"));
+                    this.context = new Container(new Uri(ConfigurationManager.AppSettings["clientwebapi_url"].ToString()));
                 }
 
                 return this.context;

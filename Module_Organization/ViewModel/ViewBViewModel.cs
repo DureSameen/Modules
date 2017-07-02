@@ -4,6 +4,7 @@ using System;
 using Telerik.Windows.Data;
 using Module_Organization.SCClientWebApi;
 using System.Data.Services.Client;
+using System.Configuration;
  
 
 namespace Module_Organization.ViewModels
@@ -26,7 +27,7 @@ namespace Module_Organization.ViewModels
             {
                 if (this.context == null)
                 {
-                    this.context = new Container(new Uri("http://localhost/SCClientApi/odata"));
+                    this.context = new Container(new Uri(ConfigurationManager.AppSettings["clientwebapi_url"].ToString()));
                 }
 
                 return this.context;
