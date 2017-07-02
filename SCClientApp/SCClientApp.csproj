@@ -7,8 +7,8 @@
     <ProjectGuid>{604A9485-00BA-44F0-A7D7-A5DA761B75BD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Modules</RootNamespace>
-    <AssemblyName>Modules</AssemblyName>
+    <RootNamespace>SCClientApp</RootNamespace>
+    <AssemblyName>SCClientApp</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>

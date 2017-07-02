@@ -12,7 +12,7 @@ namespace SSClientApp.Views
     {
         IModuleManager _moduleManager;
         IRegionManager _regionManager;
-        IRegion _region;
+         
         IUnityContainer _container;
         public MainWindow(IModuleManager moduleManager, IRegionManager regionManager, IUnityContainer  container)
         {

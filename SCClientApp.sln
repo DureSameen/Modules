@@ -16,6 +16,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Module_Trust", "Module_Trus
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCClientApp", "SCClientApp\SCClientApp.csproj", "{604A9485-00BA-44F0-A7D7-A5DA761B75BD}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SCClientApp.Setup", "SCClientApp.Setup\SCClientApp.Setup.vdproj", "{66BE4ADF-1CA5-426A-B623-53AC178189F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SCClientApp.SetupDialogue", "SCClientApp.SetupDialogue\SCClientApp.SetupDialogue.csproj", "{EAD62ED7-9390-4C5F-AE1F-BAC34142015A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,6 +38,12 @@ Global
 		{604A9485-00BA-44F0-A7D7-A5DA761B75BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{604A9485-00BA-44F0-A7D7-A5DA761B75BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{604A9485-00BA-44F0-A7D7-A5DA761B75BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66BE4ADF-1CA5-426A-B623-53AC178189F7}.Debug|Any CPU.ActiveCfg = Debug
+		{66BE4ADF-1CA5-426A-B623-53AC178189F7}.Release|Any CPU.ActiveCfg = Release
+		{EAD62ED7-9390-4C5F-AE1F-BAC34142015A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAD62ED7-9390-4C5F-AE1F-BAC34142015A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAD62ED7-9390-4C5F-AE1F-BAC34142015A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAD62ED7-9390-4C5F-AE1F-BAC34142015A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
