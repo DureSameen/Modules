@@ -44,8 +44,7 @@ namespace SCClientApp.SetupDialogue
         string path = assemblyPath.Substring(0, i);
       
 
-        System.IO.File.WriteAllText(path +"\\Edition.txt" , strSecretKey);
-        Debugger.Launch();
+       
         string working_dir = System.Reflection.Assembly.GetExecutingAssembly().Location.Replace("SCClientApp.SetupDialogue.exe", "");
         string modules_dir = working_dir + "Modules";
         if (!System.IO.Directory.Exists(modules_dir))
