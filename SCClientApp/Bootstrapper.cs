@@ -20,9 +20,9 @@ namespace SSClientApp
 
         protected override IModuleCatalog CreateModuleCatalog()
         {
-            string modules_dir = @".\Modules";
-            if (!System.IO.Directory.Exists(modules_dir ))
-                          ApplicationModules.Install();
+            string working_dir = System.Reflection.Assembly.GetExecutingAssembly().Location.Replace("SCClientApp.exe", "");
+            string modules_dir = working_dir+ "Modules";
+            
             var catalog = new DirectoryModuleCatalog() { ModulePath = modules_dir };
             
             return catalog;

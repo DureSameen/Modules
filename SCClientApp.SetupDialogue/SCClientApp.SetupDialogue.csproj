@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationModules.cs" />
     <Compile Include="CustomerModuleInstaller.cs">
       <SubType>Component</SubType>
     </Compile>

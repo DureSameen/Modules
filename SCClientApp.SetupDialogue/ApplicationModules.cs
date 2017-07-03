@@ -10,22 +10,22 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SSClientApp
+namespace SCClientApp.SetupDialogue
 {
     public static class ApplicationModules
     {
-        public static void Install()
+        public static void Install( string strSecretKey, string working_dir_path)
         {
-            string working_dir_path = System.Reflection.Assembly.GetExecutingAssembly().Location.Replace("SCClientApp.exe","");
+             
 
             HttpClient client = new HttpClient();
 
             try
             {
 
-                string strSecretKey = System.IO.File.ReadAllText(working_dir_path + "Edition.txt");
 
-                string serverwebapi_url = ConfigurationManager.AppSettings["serverwebapi_url"].ToString();
+
+                string serverwebapi_url = "http://localhost/SCServerApi/api/customer/edition_url/";
                 client.BaseAddress = new Uri(serverwebapi_url);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
