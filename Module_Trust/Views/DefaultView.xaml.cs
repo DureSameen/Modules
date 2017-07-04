@@ -1,4 +1,5 @@
 ﻿using Module_Trust.ViewModels;
+using SC.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,12 +20,12 @@ namespace Module_Trust.Views
     /// <summary>
     /// Interaction logic for ViewA.xaml
     /// </summary>
-    public partial class ViewA : UserControl
+    public partial class DefaultView : UserControl, IDefaultView
     {
-        public ViewA()
+        public DefaultView()
         { 
             InitializeComponent();
-            ViewAViewModel  vm=new ViewAViewModel ();
+            DefaultViewViewModel vm = new DefaultViewViewModel();
             GridView.ItemsSource = vm.SetDataSource();
         }
     }

@@ -31,10 +31,10 @@
                         </Menu.ItemTemplate>
                     </Menu>
                 </StackPanel>
-                <Grid />
+                <ContentControl prism:RegionManager.RegionName="ContentRegion" />
             </DockPanel>
             
-            <TabControl Grid.Row="1" Margin="10" prism:RegionManager.RegionName="ContentRegion"  />
+            <!--<TabControl Grid.Row="1" Margin="10" prism:RegionManager.RegionName="ContentRegion"  />-->
         </DockPanel>
          
     </Grid>

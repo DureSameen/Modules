@@ -20,7 +20,7 @@ namespace Module_Trust
         public void Initialize()
         {
 
-            _regionManager.RegisterViewWithRegion("ContentRegion", typeof(ViewA));
+         _regionManager.RegisterViewWithRegion("ContentRegion", typeof(DefaultView));
 
         }
     }

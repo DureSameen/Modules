@@ -16,7 +16,7 @@ namespace Module_Organization
 
         public void Initialize()
         {
-             _regionManager.RegisterViewWithRegion("ContentRegion", typeof(ViewB));
+            _regionManager.RegisterViewWithRegion("ContentRegion", typeof(DefaultView));
         }
     }
 }

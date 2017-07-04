@@ -1,4 +1,5 @@
 ﻿using Module_Organization.ViewModels;
+using SC.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,14 +18,14 @@ using System.Windows.Shapes;
 namespace Module_Organization.Views
 {
     /// <summary>
-    /// Interaction logic for ViewA.xaml
+    /// 
     /// </summary>
-    public partial class ViewB : UserControl
+    public partial class DefaultView : UserControl, IDefaultView
     {
-        public ViewB()
+        public DefaultView()
         {
             InitializeComponent();
-            ViewBViewModel vm = new ViewBViewModel();
+            DefaultViewViewModel vm = new DefaultViewViewModel();
             GridView.ItemsSource = vm.SetDataSource();
         }
     }

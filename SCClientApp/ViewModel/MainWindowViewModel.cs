@@ -17,7 +17,7 @@ namespace SCClientApp.ViewModel
     {
         MenuService menuService;
 
-        public MainWindowViewModel(IModuleManager moduleManager,  IUnityContainer container)
+        public MainWindowViewModel(IModuleManager moduleManager,IRegionManager regionmanager,  IUnityContainer container)
         {
             this.menuService = new MenuService();
 
@@ -30,7 +30,7 @@ namespace SCClientApp.ViewModel
 
             foreach (var module in editioninfo.Modules)
             {
-                Edition_MenuItem item = new Edition_MenuItem(module,moduleManager,container );
+                Edition_MenuItem item = new Edition_MenuItem(module, moduleManager, regionmanager,container);
                 this.menuService.AddMenuItem(item, "Modules");
               
             }

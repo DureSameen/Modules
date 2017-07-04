@@ -11,12 +11,12 @@ using Telerik.Windows.Data;
 
 namespace Module_Trust.ViewModels
 {
-    public class  ViewAViewModel : BindableBase
+    public class  DefaultViewViewModel : BindableBase
     {
-        
-       
 
-		public ViewAViewModel()
+
+
+        public DefaultViewViewModel()
 		{
 
 		}

@@ -9,7 +9,7 @@ using System.Configuration;
 
 namespace Module_Organization.ViewModels
 {
-    public class  ViewBViewModel : BindableBase
+    public class DefaultViewViewModel : BindableBase
     {
         
 

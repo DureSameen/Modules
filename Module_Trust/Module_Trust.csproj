@@ -112,7 +112,7 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ModuleAModule.cs" />
+    <Compile Include="Module_TrustModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -131,9 +131,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.datasvcmap</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\ViewAViewModel.cs" />
-    <Compile Include="Views\ViewA.xaml.cs">
-      <DependentUpon>ViewA.xaml</DependentUpon>
+    <Compile Include="ViewModel\DefaultViewViewModel.cs" />
+    <Compile Include="Views\DefaultView.xaml.cs">
+      <DependentUpon>DefaultView.xaml</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -151,7 +151,7 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Views\ViewA.xaml">
+    <Page Include="Views\DefaultView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -166,6 +166,12 @@
       <Generator>DataServicesCoreClientGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SC.ViewModels\SC.ViewModels.csproj">
+      <Project>{4286d0cb-7f98-46be-9d0d-810729c3a644}</Project>
+      <Name>SC.ViewModels</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

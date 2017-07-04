@@ -11,18 +11,18 @@ namespace SSClientApp.Views
     /// </summary>
     public partial class MainWindow : Window
     {
-        IModuleManager _moduleManager;
-        IRegionManager _regionManager;
+        //IModuleManager _moduleManager;
+        //IRegionManager _regionManager;
 
-        IUnityContainer _container;
-        public MainWindow(IModuleManager moduleManager, IUnityContainer  container)
+        //IUnityContainer _container;
+        public MainWindow(IModuleManager moduleManager,RegionManager regionManager, IUnityContainer  container)
         {
             InitializeComponent();
-            _moduleManager = moduleManager;
-            
-            _container = container;
+            //_moduleManager = moduleManager;
+            //_regionManager = regionManager;
+            //_container = container;
           
-            this.DataContext = new MainWindowViewModel(moduleManager,  container);
+            this.DataContext = new MainWindowViewModel(moduleManager,regionManager,  container);
         }
 
 
