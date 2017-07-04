@@ -20,8 +20,21 @@ namespace Module_Trust
         public void Initialize()
         {
 
-         _regionManager.RegisterViewWithRegion("ContentRegion", typeof(DefaultView));
+         _regionManager.RegisterViewWithRegion("ContentRegion", typeof(IndexView));
+         var _region = _regionManager.Regions["ContentRegion"];
 
+         LoadViewInRegion<DefaultView>(_region, "Module_Trust.Views.DefaultView");
+        }
+
+        private void LoadViewInRegion<IViewType>(IRegion region, string viewName)
+        {
+            object view = region.GetView(viewName);
+            if (view == null)
+            {
+                view = _container.Resolve<IViewType>();
+
+                region.Add(view, viewName);
+            }
         }
     }
 }

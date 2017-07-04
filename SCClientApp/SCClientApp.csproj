@@ -177,14 +177,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Module_Organization\Module_Organization.csproj">
-      <Project>{32ee18b8-3b11-49ec-9854-0204a62495e2}</Project>
-      <Name>Module_Organization</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Module_Trust\Module_Trust.csproj">
-      <Project>{ab8b448c-dd74-4d60-a041-3e5d03a32180}</Project>
-      <Name>Module_Trust</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SC.ViewModels\SC.ViewModels.csproj">
       <Project>{4286d0cb-7f98-46be-9d0d-810729c3a644}</Project>
       <Name>SC.ViewModels</Name>

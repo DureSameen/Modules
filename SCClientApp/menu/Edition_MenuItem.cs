@@ -1,5 +1,4 @@
 ﻿using Microsoft.Practices.Unity;
-using Module_Organization.Views;
 using Prism.Modularity;
 using Prism.Regions;
 using SC.ViewModel;
@@ -38,23 +37,13 @@ namespace SCClientApp.menu
              
                 var viewfullname = _module.TypeName.Replace(".dll", "") + ".Views.DefaultView";
               
-                LoadViewInRegion<DefaultView>(_region, viewfullname);
+                
 
                _regionManager.RequestNavigate("ContentRegion", new Uri(viewfullname, UriKind.Relative));
 
 
         }
-        private void LoadViewInRegion<IViewType>(IRegion region, string viewName)
-        {
-            object view = region.GetView(viewName);
-            if (view == null)
-            {
-                view = _container.Resolve<IViewType>();
-
-                region.Add(view, viewName);
-            }
-        }
-
+        
         
     }
 }
