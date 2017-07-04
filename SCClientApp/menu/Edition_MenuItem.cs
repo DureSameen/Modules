@@ -29,7 +29,7 @@ namespace SCClientApp.menu
         public override void OnItemSelected()
         {
               var catalog = (ModuleCatalog)_container.Resolve<IModuleCatalog>();
-              _moduleManager.LoadModule(_module.TypeName.Replace (".dll", ""));
+              _moduleManager.LoadModule("Module_"+ _module.Name +"Module");
         }
     }
 }

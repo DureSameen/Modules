@@ -5,11 +5,11 @@ using System;
 
 namespace Module_Organization
 {
-    public class OrganizationModule : IModule
+    public class Module_OrganizationModule : IModule
     {
         IRegionManager _regionManager;
 
-        public OrganizationModule(RegionManager regionManager)
+        public Module_OrganizationModule(RegionManager regionManager)
         {
             _regionManager = regionManager;
         }
