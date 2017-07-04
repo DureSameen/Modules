@@ -49,7 +49,7 @@ namespace SCClientApp.SetupDialogue
 
                    
 
-                        var extractPath = working_dir_path + "\\Modules";
+                        var extractPath = working_dir_path + "\\Edition";
 
                         if (!System.IO.Directory.Exists(extractPath))
                             System.IO.Directory.CreateDirectory(extractPath);

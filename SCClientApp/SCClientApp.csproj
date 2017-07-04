@@ -135,6 +135,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Bootstrapper.cs" />
+    <Compile Include="helpers\CommonHelper.cs" />
+    <Compile Include="menu\EditionInfoManager.cs" />
+    <Compile Include="menu\MenuCommand.cs" />
+    <Compile Include="menu\MenuItem.cs" />
+    <Compile Include="menu\MenuService.cs" />
+    <Compile Include="menu\Edition_MenuItem.cs" />
+    <Compile Include="menu\Modules_MenuItem.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -168,7 +176,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\SC.ViewModels\SC.ViewModels.csproj">
+      <Project>{4286d0cb-7f98-46be-9d0d-810729c3a644}</Project>
+      <Name>SC.ViewModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SCClientApp.Common\SCClientApp.Common.csproj">
+      <Project>{25adaf81-37d9-4bdf-9b8c-abb4f35939a9}</Project>
+      <Name>SCClientApp.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

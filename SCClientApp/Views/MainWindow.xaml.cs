@@ -1,6 +1,7 @@
 ﻿using Microsoft.Practices.Unity;
 using Prism.Modularity;
 using Prism.Regions;
+using SCClientApp.ViewModel;
 using System.Windows;
 
 namespace SSClientApp.Views
@@ -12,19 +13,16 @@ namespace SSClientApp.Views
     {
         IModuleManager _moduleManager;
         IRegionManager _regionManager;
-         
+
         IUnityContainer _container;
-        public MainWindow(IModuleManager moduleManager, IRegionManager regionManager, IUnityContainer  container)
+        public MainWindow(IModuleManager moduleManager, IUnityContainer  container)
         {
             InitializeComponent();
             _moduleManager = moduleManager;
-            _regionManager = regionManager;
+            
             _container = container;
-            var catalog = (ModuleCatalog)_container.Resolve<IModuleCatalog>();
- 
-             foreach (var module in catalog.Modules )
-                 _moduleManager.LoadModule(module.ModuleName);
-             
+          
+            this.DataContext = new MainWindowViewModel(moduleManager,  container);
         }
 
 

@@ -3,6 +3,7 @@ using Prism.Unity;
 using SSClientApp.Views;
 using System.Windows;
 using Prism.Modularity;
+using SCClientApp.helpers;
 
 namespace SSClientApp
 {
@@ -20,8 +21,8 @@ namespace SSClientApp
 
         protected override IModuleCatalog CreateModuleCatalog()
         {
-            string working_dir = System.Reflection.Assembly.GetExecutingAssembly().Location.Replace("SCClientApp.exe", "");
-            string modules_dir = working_dir+ "Modules";
+           
+            string modules_dir =  @".\Edition\Modules";
             
             var catalog = new DirectoryModuleCatalog() { ModulePath = modules_dir };
             
@@ -37,7 +38,7 @@ namespace SSClientApp
         {
            
             module.InitializationMode = InitializationMode.OnDemand;
-            }
+        }
         
               }
     }
