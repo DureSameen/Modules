@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 
 namespace SCClientApp.SetupDialogue
 {
@@ -22,10 +23,8 @@ namespace SCClientApp.SetupDialogue
 
             try
             {
-
-
-
-                string serverwebapi_url = "http://localhost/SCServerApi/api/customer/edition_url/";
+ 
+                 string serverwebapi_url =  loadConfig( working_dir_path); //ConfigurationManager.AppSettings["serverwebapi_url"]; // "http://localhost/SCServerApi/api/customer/edition_url/";
                 client.BaseAddress = new Uri(serverwebapi_url);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -64,7 +63,16 @@ namespace SCClientApp.SetupDialogue
             { }
         }
 
+        private static string loadConfig(string working_dir_path)
+        {
 
+            XmlDocument xdoc = new XmlDocument();
+            xdoc.Load(working_dir_path + "app.config");
+            XmlNode xnodes = xdoc.SelectSingleNode("/configuration/appSettings");
+            return xnodes.ChildNodes[0].Attributes[1].Value;
+             
+
+        }
 
     }
 }
