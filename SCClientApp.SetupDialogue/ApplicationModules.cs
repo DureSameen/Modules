@@ -25,7 +25,7 @@ namespace SCClientApp.SetupDialogue
 
 
 
-                string serverwebapi_url = "http://localhost/SCServerApi/api/customer/edition_url/";
+                string serverwebapi_url = "http://localhost:60375/api/customer/edition_url/";
                 client.BaseAddress = new Uri(serverwebapi_url);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
