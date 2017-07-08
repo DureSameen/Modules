@@ -39,16 +39,17 @@ namespace SCClientApp.SetupDialogue
 
         string assemblyPath = Context.Parameters["assemblyPath"];
 
-        int i = assemblyPath.Length - 1;
-        while (assemblyPath[i] != '\\') --i;
-        string path = assemblyPath.Substring(0, i);
-      
 
-       
-        string working_dir = System.Reflection.Assembly.GetExecutingAssembly().Location.Replace("SCClientApp.SetupDialogue.exe", "");
-        string modules_dir = working_dir + "Modules";
+        Debugger.Launch();
+
+         var config=    new AppConfigurations( "SCClientApp.SetupDialogue.exe.config",assemblyPath,strSecretKey);
+             
+
+
+        string modules_dir = config.AssemblyPath + "Modules";
+
         if (!System.IO.Directory.Exists(modules_dir))
-            ApplicationModules.Install(strSecretKey,working_dir);
+            ApplicationModules.Install(config);
         
          }
 

@@ -15,7 +15,7 @@ namespace SCClientApp.SetupDialogue
 {
     public static class ApplicationModules
     {
-        public static void Install( string strSecretKey, string working_dir_path)
+        public static void Install(AppConfigurations  config)
         {
              
 
@@ -23,19 +23,14 @@ namespace SCClientApp.SetupDialogue
 
             try
             {
-<<<<<<< HEAD
 
-
-
-                string serverwebapi_url = "http://localhost:60375/api/customer/edition_url/";
-=======
  
-                 string serverwebapi_url =  loadConfig( working_dir_path); //ConfigurationManager.AppSettings["serverwebapi_url"]; // "http://localhost/SCServerApi/api/customer/edition_url/";
->>>>>>> d8888daca4d49fc917bd5d5607b405e208307f4c
+                 string serverwebapi_url =  config.GetSetting("serverwebapi_url");  
+
                 client.BaseAddress = new Uri(serverwebapi_url);
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                string path = serverwebapi_url +  strSecretKey;
+                string path = serverwebapi_url + config.SecretKey;
 
                 HttpResponseMessage response = client.GetAsync(path).Result;
                 if (response.IsSuccessStatusCode)
@@ -49,17 +44,16 @@ namespace SCClientApp.SetupDialogue
 
 
 
-                    webClient.DownloadFile(zipfile_url, working_dir_path+filename);
+                    webClient.DownloadFile(zipfile_url, config.AssemblyPath + filename);
 
-                    //unzip files in mdoule fodler;
-
-                   
-
-                        var extractPath = working_dir_path + "\\Edition";
+                    var extractPath = config.AssemblyPath + "Edition";
 
                         if (!System.IO.Directory.Exists(extractPath))
+
                             System.IO.Directory.CreateDirectory(extractPath);
-                        var zipPath = working_dir_path + filename;
+
+                        var zipPath = config.AssemblyPath + filename;
+
                         ZipFile.ExtractToDirectory(zipPath, extractPath);
 
                     
@@ -70,16 +64,7 @@ namespace SCClientApp.SetupDialogue
             { }
         }
 
-        private static string loadConfig(string working_dir_path)
-        {
-
-            XmlDocument xdoc = new XmlDocument();
-            xdoc.Load(working_dir_path + "app.config");
-            XmlNode xnodes = xdoc.SelectSingleNode("/configuration/appSettings");
-            return xnodes.ChildNodes[0].Attributes[1].Value;
-             
-
-        }
+      
 
     }
 }
