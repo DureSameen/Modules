@@ -20,19 +20,24 @@ namespace SCClientApp.ViewModel
         public MainWindowViewModel(IModuleManager moduleManager,IRegionManager regionmanager,  IUnityContainer container)
         {
             this.menuService = new MenuService();
-
-            Modules_MenuItem modules_Menu = new Modules_MenuItem(); 
-            this.menuService.AddMenuItem(modules_Menu);
-
-
             EditionInfoManager mgr = new EditionInfoManager();
-            EditionInfo editioninfo= mgr.ReadFromFile();
+            EditionInfo editioninfo = mgr.ReadFromFile();
 
-            foreach (var module in editioninfo.Modules)
+
+
+
+
+            foreach (var section in editioninfo.Sections)
             {
-                Edition_MenuItem item = new Edition_MenuItem(module, moduleManager, regionmanager,container);
-                this.menuService.AddMenuItem(item, "Modules");
-              
+                Section_MenuItem section_Menu = new Section_MenuItem(section.Name);
+                this.menuService.AddMenuItem(section_Menu);
+
+                foreach (var module in section.Modules)
+                {
+                    Modules_MenuItem item = new Modules_MenuItem(module, moduleManager, regionmanager, container);
+                    this.menuService.AddMenuItem(item, section.Name);
+
+                }
             }
 
         }

@@ -140,8 +140,8 @@
     <Compile Include="menu\MenuCommand.cs" />
     <Compile Include="menu\MenuItem.cs" />
     <Compile Include="menu\MenuService.cs" />
-    <Compile Include="menu\Edition_MenuItem.cs" />
     <Compile Include="menu\Modules_MenuItem.cs" />
+    <Compile Include="menu\Section_MenuItem.cs" />
     <Compile Include="ViewModel\MainWindowViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
