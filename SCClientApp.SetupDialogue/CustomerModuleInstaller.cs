@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Configuration;
 using System.Configuration.Install;
 using System.Diagnostics;
+using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
@@ -40,7 +41,7 @@ namespace SCClientApp.SetupDialogue
         string assemblyPath = Context.Parameters["assemblyPath"];
 
 
-        Debugger.Launch();
+        
 
          var config=    new AppConfigurations( "SCClientApp.SetupDialogue.exe.config",assemblyPath,strSecretKey);
              
@@ -52,7 +53,31 @@ namespace SCClientApp.SetupDialogue
             ApplicationModules.Install(config);
         
          }
+         public override void Uninstall(IDictionary savedState)
+         {
+            
+             base.Uninstall(savedState);
 
+             
+
+
+             string assemblyPath = Context.Parameters["assemblyPath"];
+            
+             var config = new AppConfigurations("SCClientApp.SetupDialogue.exe.config", assemblyPath, "");
+
+             var extractPath = config.AssemblyPath + "Edition";
+
+             var dir = new DirectoryInfo(config.AssemblyPath);
+
+             foreach (var file in dir.EnumerateFiles("*.zip"))
+             {
+                 file.Delete();
+             }
+
+           if (System.IO.Directory.Exists(extractPath))
+             System.IO.Directory.Delete(extractPath,true);
+         
+         }
           
     }
 }

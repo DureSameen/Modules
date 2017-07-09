@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Diagnostics;
+using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
@@ -56,8 +57,9 @@ namespace SCClientApp.SetupDialogue
 
                         ZipFile.ExtractToDirectory(zipPath, extractPath);
 
-                    
-
+                      
+                        
+                        File.SetAttributes(extractPath,   FileAttributes.Normal);
                 }
             }
             catch (Exception ex)

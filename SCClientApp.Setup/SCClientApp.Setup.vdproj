@@ -1365,6 +1365,20 @@
             "InstallerClass" = "11:TRUE"
             "CustomActionData" = "8:/SecretKey=[SECRET_KEY]"
             }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_91FB3050888B4387A1ECEA148E13C72E"
+            {
+            "Name" = "8:Primary output from SCClientApp.SetupDialogue (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_74793A41369E4B3CBC2B1FB5445AF5F8"
+            "FileType" = "3:2"
+            "InstallAction" = "3:4"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_B25088F2_E151_4165_B0B2_C0B09D48B4B5"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
         }
         "DefaultFeature"
         {
@@ -3770,7 +3784,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:SCClientApp "
         "ProductCode" = "8:{7BA7A817-EB61-4466-BD41-01489F851148}"
-        "PackageCode" = "8:{3E1E8C94-2B48-4CBE-8F61-194720358175}"
+        "PackageCode" = "8:{D6335949-E39F-4D52-81BE-1C06E2356747}"
         "UpgradeCode" = "8:{B64FF7A4-A5DC-4245-BFDF-9B2D99181AB8}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
